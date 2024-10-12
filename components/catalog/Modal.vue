@@ -48,10 +48,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Item } from '~/types';
 const userStore = useUserStore();
 
-const info: Item = computed(() => userStore.currentCard);
+const info = computed(() => userStore.currentCard);
 const closeModal = () => (userStore.visible = false);
 
 document.addEventListener('keydown', event => {

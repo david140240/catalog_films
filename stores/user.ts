@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { defineStore } from 'pinia';
-import type { Welcome } from '~/types';
+import type { Item, Welcome } from '~/types';
 
 export const useUserStore = defineStore('user', () => {
 	let listMovies = reactive({ data: null as Welcome | null });
 	let visible = ref(false);
-	let currentCard = reactive({});
+	let currentCard = reactive({} as Item);
 
 	const getFilms = async (page: number) => {
 		try {

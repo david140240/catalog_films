@@ -19,7 +19,7 @@ const userStore = useUserStore();
 const field = ref('');
 let page = ref(1);
 
-const getMovies = async page => {
+const getMovies = async (page: number) => {
 	await userStore.getFilms(page);
 };
 getMovies(page.value);
@@ -42,6 +42,7 @@ const movies = computed(() =>
 	margin: 0;
 	background: rgb(98, 98, 98);
 	background: $main-bg;
+
 	.input {
 		outline: none;
 		width: 20rem;
